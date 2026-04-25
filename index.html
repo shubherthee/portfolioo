@@ -95,9 +95,8 @@ nav{
 
 .hero-inner{
   max-width:1300px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:flex-start;;
+  display:grid;grid-template-columns:1fr 480px;gap:60px;align-items:flex-start;
   position:relative;z-index:1;
-  
 }
 
 .hero-eyebrow{
@@ -118,7 +117,7 @@ nav{
 .hero-name {
   font-family:'Playfair Display',serif;
   font-weight: 800;
-  font-size: clamp(50px, 4.25vw, 70px);
+  font-size: clamp(75px, 4.25vw, 70px);
   letter-spacing: clamp(-1.75px, -0.25vw, -3.5px);
   line-height: 0.95;
   color: #ffffff;
@@ -184,97 +183,35 @@ nav{
 }
 
 @keyframes aurora-1 {
-  0% {
-    top: 0;
-    right: 0;
-  }
-  50% {
-    top: 100%;
-    right: 75%;
-  }
-  75% {
-    top: 100%;
-    right: 25%;
-  }
-  100% {
-    top: 0;
-    right: 0;
-  }
+  0% { top: 0; right: 0; }
+  50% { top: 100%; right: 75%; }
+  75% { top: 100%; right: 25%; }
+  100% { top: 0; right: 0; }
 }
-
 @keyframes aurora-2 {
-  0% {
-    top: -50%;
-    left: 0%;
-  }
-  60% {
-    top: 100%;
-    left: 75%;
-  }
-  85% {
-    top: 100%;
-    left: 25%;
-  }
-  100% {
-    top: -50%;
-    left: 0%;
-  }
+  0% { top: -50%; left: 0%; }
+  60% { top: 100%; left: 75%; }
+  85% { top: 100%; left: 25%; }
+  100% { top: -50%; left: 0%; }
 }
-
 @keyframes aurora-3 {
-  0% {
-    bottom: 0;
-    left: 0;
-  }
-  40% {
-    bottom: 100%;
-    left: 75%;
-  }
-  65% {
-    bottom: 40%;
-    left: 50%;
-  }
-  100% {
-    bottom: 0;
-    left: 0;
-  }
+  0% { bottom: 0; left: 0; }
+  40% { bottom: 100%; left: 75%; }
+  65% { bottom: 40%; left: 50%; }
+  100% { bottom: 0; left: 0; }
 }
-
 @keyframes aurora-4 {
-  0% {
-    bottom: -50%;
-    right: 0;
-  }
-  50% {
-    bottom: 0%;
-    right: 40%;
-  }
-  90% {
-    bottom: 50%;
-    right: 25%;
-  }
-  100% {
-    bottom: -50%;
-    right: 0;
-  }
+  0% { bottom: -50%; right: 0; }
+  50% { bottom: 0%; right: 40%; }
+  90% { bottom: 50%; right: 25%; }
+  100% { bottom: -50%; right: 0; }
 }
-
 @keyframes aurora-border {
-  0% {
-    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-  }
-  25% {
-    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
-  }
-  50% {
-    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
-  }
-  75% {
-    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
-  }
-  100% {
-    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-  }
+  0% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
+  25% { border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%; }
+  50% { border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%; }
+  75% { border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%; }
+  100% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
 }
 
 .hero-name span {
@@ -291,13 +228,13 @@ nav{
   color: #ffb6db;
 }
 
-
 .hero-role{
-  font-family:'Space Mono',monospace;font-size:16px;
+  font-family:'Space Mono',monospace;font-size:10px;
   color:#b7bd87;margin:20px 0 26px;letter-spacing:1px;
 }
 .hero-bio{
-  font-size:12px;line-height:1.85;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size:12px;line-height:1.9;
   color:#ffffffc9;max-width:900px;
   margin-bottom:38px;font-weight:300;
   text-align:justify;
@@ -337,11 +274,11 @@ nav{
 }
 .btn-outline:hover{border-color:rgba(245,240,232,0.25);color:var(--cream)}
 
-/* ── HERO CARD ── */
+/* ── HERO CARD (EQUAL 50/50 SPLIT) ── */
 .hero-panel{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:19.2px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   background:linear-gradient(160deg,rgba(74,124,89,0.12),rgba(26,39,68,0.6));
   border:1px solid var(--border2);
   border-radius:22.4px;padding:28.8px;
@@ -351,38 +288,76 @@ nav{
   content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;
   background:linear-gradient(90deg,transparent,var(--sage),transparent);
 }
-.panel-side{display:flex;flex-direction:column;justify-content:center}
-.panel-side--image{min-height:192px;justify-content:center}
+
+.hero-panel-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50/50 exactly equal ratio */
+  gap: 20px;
+  align-items: stretch; /* Forces both columns to be exactly the same height */
+}
+
 .panel-avatar{
-  width:100%;
-  height:100%;
-  min-height:50px;
-  border-radius:22.4px;
+  width: 100%;
+  height: 100%;
+  min-height: 220px; /* Minimum height to ensure it looks good */
+  border-radius: 16px; 
   background:linear-gradient(135deg,var(--meadow),var(--fern));
   overflow:hidden;
   border:2px solid rgba(126,184,122,0.35);
   box-shadow:0 0 32px rgba(74,124,89,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .panel-avatar img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:cover; /* Keeps picture full, doesn't distort */
+  object-position: center top; /* Focuses on the face/top to prevent bad cropping */
   display:block;
 }
-.panel-stats{display:flex;flex-direction:column;gap:14px;margin-bottom:16px}
-@media (max-width:700px){
-  .hero-panel{grid-template-columns:1fr}
-  .panel-side--image{min-height:260px}
+
+.panel-stats {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between; /* Spreads the cards out to perfectly match image height */
+  gap:10px;
+  height:100%;
 }
+
 .ps{
-  background:rgba(255,255,255,0.04);border:1px solid var(--border);
-  border-radius:11.2px;padding:11.2px;text-align:center;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  border-radius:11.2px;
+  padding:14px 12px;
+  text-align:center;
+  flex: 1; /* Makes all 3 boxes stretch equally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .ps-num{
-  font-family:'Playfair Display',serif;font-weight:700;font-size:13.6px;
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  font-size:12.5px; /* Scaled down slightly to fit the 50% split nicely */
+  line-height: 1.3;
   color:var(--gold);
 }
-.ps-lbl{font-size:10px;color:var(--text3);font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.ps-lbl{
+  font-size:9.5px;
+  color:var(--text3);
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+
+.hero-panel-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .panel-row{
   background:rgba(255,255,255,0.03);border:1px solid var(--border);
   border-radius:9.6px;padding:9.6px 12.8px;
@@ -390,7 +365,20 @@ nav{
   font-size:13.6px;margin-bottom:6.4px;
 }
 .panel-row span:first-child{color:var(--text3)}
-.panel-row span:last-child{color:var(--sage);font-weight:500}
+.panel-row span:last-child{color:var(--sage);font-weight:500;text-align:right}
+
+/* Responsive updates */
+@media (max-width:1000px){
+  /* On mobile/tablets, the DOM order automatically places the bio text FIRST, and the profile card BELOW it. */
+  .hero-inner{grid-template-columns:1fr; gap: 40px;}
+}
+@media (max-width:500px){
+  /* Stack the image and stats on very small screens to prevent them from getting too squished */
+  .hero-panel-top{grid-template-columns:1fr; gap:16px;}
+  .panel-avatar{height: 250px; min-height: unset;}
+  .panel-row { flex-direction: column; gap: 4px; padding: 12px; }
+  .panel-row span:last-child { text-align:center; }
+}
 
 /* ── SECTION ── */
 .wrap{max-width:1300px;margin:0 auto;padding:90px 52px;position:relative;z-index:1}
@@ -617,14 +605,25 @@ footer{
   90%{opacity:0.5}
   100%{transform:translateY(-100vh) translateX(var(--dx,20px));opacity:0}
 }
+.cursor-glow{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 233, 177, 0.153), transparent 65%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
 </style>
 </head>
 <body>
 
-<!-- STARS -->
 <div class="stars" id="stars"></div>
 
-<!-- FLOATING SPORES -->
 <div class="spore" style="width:4px;height:4px;left:10%;bottom:0;--dur:22s;--d:0s;--dx:40px"></div>
 <div class="spore" style="width:3px;height:3px;left:25%;bottom:0;--dur:18s;--d:-6s;--dx:-30px"></div>
 <div class="spore" style="width:5px;height:5px;left:50%;bottom:0;--dur:26s;--d:-3s;--dx:20px"></div>
@@ -633,7 +632,6 @@ footer{
 <div class="spore" style="width:2px;height:2px;left:40%;bottom:0;--dur:19s;--d:-14s;--dx:-25px;background:rgba(232,201,110,0.5)"></div>
 <div class="spore" style="width:3px;height:3px;left:60%;bottom:0;--dur:21s;--d:-4s;--dx:35px;background:rgba(232,180,200,0.4)"></div>
 
-<!-- HILLS SVG -->
 <div class="hills-bg">
 <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
   <path fill="#3d6b4f" d="M0,200 C200,120 400,280 720,180 C1040,80 1280,220 1440,160 L1440,320 L0,320 Z"/>
@@ -642,19 +640,16 @@ footer{
 </svg>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Shubherthee.</div>
   <div class="nav-links">
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#projects">Contact</a>
     <a class="nav-cta" href="mailto:shubherthee@graduate.utm.my">Hire Me</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="ghibli-glow g1"></div>
   <div class="ghibli-glow g2"></div>
@@ -668,13 +663,7 @@ footer{
         Open to Internship · Aug 2026
       </div>
       <p class="hero-bio">
-        Hi, I’m Esha. I am a final-year Software Engineering student at Universiti Teknologi Malaysia (UTM), originally from Bangladesh and currently based in Johor Bahru, Malaysia.
-      </p>
-      <p class="hero-bio">
-        🧪 Currently, I am conducting my Final Year Project on Explainable AI (XAI) and Machine Learning for Credit Assessment. My work aims to move beyond "black-box" models, ensuring AI-driven financial decisions are transparent, fair, and interpretable.
-      </p>
-      <p class="hero-bio">
-        🎨 Beyond the Code, I love painting and reading. I draw inspiration from the fine arts to bring a unique, creative perspective to the tech space.To see my arts on Instagram: @eshaescape
+        Hi, I’m Esha — a final-year Software Engineering student at UTM, originally from Bangladesh and now based in Johor Bahru, Malaysia. I’m currently working on my Final Year Project in Explainable AI for credit assessment, where I explore how machine learning models behave on imbalanced data and use SHAP and LIME to make their decisions more transparent and fair. Outside of tech you’ll usually find me painting or reading.
       </p>
       <div class="hero-pills">
         <span class="pill"><span class="pill-dot pd-sage"></span>CGPA 3.86 / 4.0</span>
@@ -689,27 +678,29 @@ footer{
         <a class="btn-outline" href="https://www.linkedin.com/in/shubherthee/" target="_blank">LinkedIn</a>
       </div>
     </div>
+    
     <div class="hero-panel">
-      <div class="panel-side panel-side--image">
+      <div class="hero-panel-top">
         <div class="panel-avatar"><img src="image.png" alt="Photo of Shubherthee"></div>
-      </div>
-      <div class="panel-side panel-side--info">
         <div class="panel-stats">
           <div class="ps"><div class="ps-num">3.86</div><div class="ps-lbl">CGPA</div></div>
           <div class="ps"><div class="ps-num">Universiti Teknologi Malaysia</div><div class="ps-lbl">University</div></div>
           <div class="ps"><div class="ps-num">Bachelor of Computer Science (Software Engineering) with Honours</div><div class="ps-lbl">Course</div></div>
         </div>
+      </div>
+      
+      <div class="hero-panel-bottom">
         <div class="panel-row"><span>Status</span><span>Seeking internships Aug 2026</span></div>
         <div class="panel-row"><span>Graduation</span><span>February 2027</span></div>
         <div class="panel-row"><span>Location</span><span>Johor Bahru, MY</span></div>
       </div>
     </div>
+    
   </div>
 </section>
 
 <div class="hr"></div>
 
-<!-- SKILLS -->
 <div class="wrap" id="skills">
   <div class="sec-eyebrow">Technical Skills</div>
   <h2 class="sec-h">What I build <em>with</em></h2>
@@ -750,7 +741,6 @@ footer{
 
 <div class="hr"></div>
 
-<!-- EDUCATION -->
 <div class="wrap" id="education">
   <div class="sec-eyebrow">Academic Background</div>
   <h2 class="sec-h">Where I <em>studied</em></h2>
@@ -772,7 +762,6 @@ footer{
 
 <div class="hr"></div>
 
-<!-- EXPERIENCE -->
 <div class="wrap" id="experience">
   <div class="sec-eyebrow">Work Experience</div>
   <h2 class="sec-h">Where I've <em>worked</em></h2>
@@ -806,7 +795,6 @@ footer{
 
 <div class="hr"></div>
 
-<!-- PROJECTS -->
 <div class="wrap" id="projects">
   <div class="sec-eyebrow">Selected Work</div>
   <h2 class="sec-h">Projects</h2>
@@ -865,7 +853,6 @@ footer{
 
 <div class="hr"></div>
 
-<!-- CAMPUS -->
 <div class="wrap" id="campus">
   <div class="sec-eyebrow">Beyond Code</div>
   <h2 class="sec-h">Campus & <em>Achievements</em></h2>
@@ -911,7 +898,6 @@ footer{
 
 <div class="hr"></div>
 
-<!-- CONTACT -->
 <section class="contact-wrap" id="contact">
   <div class="contact-halo"></div>
   <h2 class="contact-h">Let's build<br><em>something great.</em></h2>
@@ -922,10 +908,11 @@ footer{
     <a class="clink" href="https://github.com/shubherthee" target="_blank">⌥ GitHub</a>
     <a class="clink" href="tel:+60182410738">☎ +601 8241 0738</a>
   </div>
+  <div class="cursor-glow"></div>
 </section>
 
 <footer>
-  <span>Shubherthee Esha · 2026</span>
+  <span>Made by Shubherthee Esha · 2026</span>
 </footer>
 
 <script>
@@ -939,5 +926,28 @@ for(let i=0;i<90;i++){
 }
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+const glow = document.querySelector('.cursor-glow');
+
+let x = 0, y = 0;
+let targetX = 0, targetY = 0;
+
+window.addEventListener('mousemove', (e) => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+
+function animate() {
+  x += (targetX - x) * 0.1;
+  y += (targetY - y) * 0.1;
+
+  glow.style.left = x + 'px';
+  glow.style.top = y + 'px';
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>
