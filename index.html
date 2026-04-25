@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Shubherthee Esha</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Love+Ya+Like+A+Sister&family=Satisfy&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/proclamate" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Love+Ya+Like+A+Sister&family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/proclamate" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -117,16 +118,19 @@ nav{
 .hero-name {
   font-family:'Playfair Display',serif;
   font-weight: 800;
-  font-size: clamp(75px, 4.25vw, 70px);
+  /* Fixed clamp value for proper mobile scaling */
+  font-size: clamp(40px, 8vw, 70px);
   letter-spacing: clamp(-1.75px, -0.25vw, -3.5px);
-  line-height: 0.95;
+  line-height: 1.1;
   color: #ffffff;
   margin: 28px 0 6px;
   position: relative;
   z-index: 1;
-  white-space: nowrap;
+  /* Removed white-space: nowrap to prevent horizontal distortion */
+  word-wrap: break-word; 
   overflow: hidden;
   background: var(--sky3);
+  padding-bottom: 5px;
 }
 
 .aurora {
@@ -232,15 +236,27 @@ nav{
   font-family:'Space Mono',monospace;font-size:10px;
   color:#b7bd87;margin:20px 0 26px;letter-spacing:1px;
 }
-.hero-bio{
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size:12px;line-height:1.9;
-  color:#ffffffc9;max-width:900px;
-  margin-bottom:38px;font-weight:300;
-  text-align:justify;
-  text-justify:inter-word;
+
+/* Updated Hero Bio with new font and animation */
+.hero-bio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px; 
+  line-height: 1.8;
+  color: #ffffffc9;
+  max-width: 900px;
+  margin-bottom: 38px;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
+  opacity: 0; /* Base state for animation */
+  animation: fadeUpBio 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
 }
 .hero-bio strong{color:var(--cream);font-weight:500}
+
+@keyframes fadeUpBio {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
 .hero-pills{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:40px}
 .pill{
@@ -366,19 +382,6 @@ nav{
 }
 .panel-row span:first-child{color:var(--text3)}
 .panel-row span:last-child{color:var(--sage);font-weight:500;text-align:right}
-
-/* Responsive updates */
-@media (max-width:1000px){
-  /* On mobile/tablets, the DOM order automatically places the bio text FIRST, and the profile card BELOW it. */
-  .hero-inner{grid-template-columns:1fr; gap: 40px;}
-}
-@media (max-width:500px){
-  /* Stack the image and stats on very small screens to prevent them from getting too squished */
-  .hero-panel-top{grid-template-columns:1fr; gap:16px;}
-  .panel-avatar{height: 250px; min-height: unset;}
-  .panel-row { flex-direction: column; gap: 4px; padding: 12px; }
-  .panel-row span:last-child { text-align:center; }
-}
 
 /* ── SECTION ── */
 .wrap{max-width:1300px;margin:0 auto;padding:90px 52px;position:relative;z-index:1}
@@ -617,6 +620,43 @@ footer{
   transform: translate(-50%, -50%);
   z-index: 9999;
   mix-blend-mode: overlay;
+}
+
+/* ── MOBILE RESPONSIVENESS FIXES ── */
+@media (max-width: 1000px){
+  .hero-inner{grid-template-columns:1fr; gap: 40px;}
+  .proj-grid { grid-template-columns: repeat(2, 1fr); }
+  .campus-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px){
+  /* Fix tight paddings on mobile causing squishing */
+  nav { padding: 16px 20px; }
+  .hero { padding: 110px 20px 60px; }
+  .wrap, .contact-wrap, footer, .hr { 
+    padding-left: 20px; 
+    padding-right: 20px; 
+  }
+  .hr { margin: 0 20px; }
+
+  /* Collapse large grids to a single column */
+  .skills-grid, .edu-grid, .proj-grid, .campus-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exp-card {
+    grid-template-columns: 1fr; /* Stack experience cards */
+    gap: 12px;
+  }
+  .exp-period { width: fit-content; }
+}
+
+@media (max-width: 500px){
+  .nav-links a:not(.nav-cta) { display: none; } /* Hide text links on tiny screens to fit CTA */
+  .hero-panel-top{grid-template-columns:1fr; gap:16px;}
+  .panel-avatar{height: 250px; min-height: unset;}
+  .panel-row { flex-direction: column; gap: 4px; padding: 12px; }
+  .panel-row span:last-child { text-align:center; }
 }
 </style>
 </head>
