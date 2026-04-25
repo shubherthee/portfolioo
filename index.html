@@ -4,7 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Shubherthee Esha</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Love+Ya+Like+A+Sister&family=Satisfy&display=swap" rel="stylesheet"><link href="https://fonts.cdnfonts.com/css/proclamate" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -95,6 +97,7 @@ nav{
   max-width:1300px;margin:0 auto;width:100%;
   display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:center;
   position:relative;z-index:1;
+  
 }
 
 .hero-eyebrow{
@@ -112,25 +115,190 @@ nav{
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
 
-.hero-name{
+.hero-name {
   font-family:'Playfair Display',serif;
-  font-weight:900;
-  font-size:clamp(52px,6.5vw,90px);
-  line-height:0.95;letter-spacing:-2px;
-  color:var(--cream);margin-bottom:6px;
+  font-weight: 800;
+  font-size: clamp(100px, 4.25vw, 70px);
+  letter-spacing: clamp(-1.5px, -0.3vw, -3.0px);
+  line-height: 0.95;
+  color: #ffffff;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  background: var(--sky3);
 }
-.hero-name .name-line2{
-  display:inline;
-  color:var(--petal);
-  font-style:italic;
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+  opacity: 0.3;
 }
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(2rem);
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  background-color:  #ffc8e3eb;
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color:  #ffc8e3eb;
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: #ffc8e3eb;
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: #ffc8e3eb;
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+
+.hero-name span {
+  font-family: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-name span:nth-child(13),
+.hero-name span:nth-child(14),
+.hero-name span:nth-child(15),
+.hero-name span:nth-child(16) {
+  font-style: italic;
+  color: #ffb6db;
+}
+
+
 .hero-role{
-  font-family:'Space Mono',monospace;font-size:13px;
-  color:var(--sage);margin:20px 0 26px;letter-spacing:1px;
+  font-family:'Space Mono',monospace;font-size:16px;
+  color:#b7bd87;margin:20px 0 26px;letter-spacing:1px;
 }
 .hero-bio{
   font-size:16px;line-height:1.85;
-  color:var(--text2);max-width:900px;
+  color:#ffffffc9;max-width:900px;
   margin-bottom:38px;font-weight:300;
   text-align:justify;
   text-justify:inter-word;
@@ -173,10 +341,10 @@ nav{
 .hero-panel{
   display:grid;
   grid-template-columns:1fr;
-  gap:24px;
+  gap:19.2px;
   background:linear-gradient(160deg,rgba(74,124,89,0.12),rgba(26,39,68,0.6));
   border:1px solid var(--border2);
-  border-radius:28px;padding:36px;
+  border-radius:22.4px;padding:28.8px;
   position:relative;overflow:hidden;
 }
 .hero-panel::before{
@@ -184,12 +352,12 @@ nav{
   background:linear-gradient(90deg,transparent,var(--sage),transparent);
 }
 .panel-side{display:flex;flex-direction:column;justify-content:center}
-.panel-side--image{min-height:240px;justify-content:center}
+.panel-side--image{min-height:192px;justify-content:center}
 .panel-avatar{
   width:100%;
   height:100%;
   min-height:50px;
-  border-radius:28px;
+  border-radius:22.4px;
   background:linear-gradient(135deg,var(--meadow),var(--fern));
   overflow:hidden;
   border:2px solid rgba(126,184,122,0.35);
@@ -208,18 +376,18 @@ nav{
 }
 .ps{
   background:rgba(255,255,255,0.04);border:1px solid var(--border);
-  border-radius:14px;padding:14px;text-align:center;
+  border-radius:11.2px;padding:11.2px;text-align:center;
 }
 .ps-num{
-  font-family:'Playfair Display',serif;font-weight:700;font-size:18px;
+  font-family:'Playfair Display',serif;font-weight:700;font-size:13.6px;
   color:var(--gold);
 }
 .ps-lbl{font-size:10px;color:var(--text3);font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 .panel-row{
   background:rgba(255,255,255,0.03);border:1px solid var(--border);
-  border-radius:12px;padding:12px 16px;
+  border-radius:9.6px;padding:9.6px 12.8px;
   display:flex;justify-content:space-between;align-items:center;
-  font-size:12px;margin-bottom:8px;
+  font-size:13.6px;margin-bottom:6.4px;
 }
 .panel-row span:first-child{color:var(--text3)}
 .panel-row span:last-child{color:var(--sage);font-weight:500}
@@ -493,23 +661,20 @@ footer{
   <div class="ghibli-glow g3"></div>
   <div class="hero-inner">
     <div>
+      <h1 class="hero-name"><div class="aurora"><div class="aurora__item"></div><div class="aurora__item"></div><div class="aurora__item"></div><div class="aurora__item"></div></div><span>S</span><span>h</span><span>u</span><span>b</span><span>h</span><span>e</span><span>r</span><span>t</span><span>h</span><span>e</span><span>e</span> <span>E</span><span>s</span><span>h</span><span>a</span></h1>
+      <div class="hero-role">Final Year Software Engineering Student · Universiti Teknologi Malaysia</div>
       <div class="hero-eyebrow">
         <span class="pulse-leaf"></span>
         Open to Internship · Aug 2026
       </div>
-      <h1 class="hero-name">Shubherthee <span class="name-line2">Esha</span></h1>
-      <div class="hero-role">Final Year Software Engineering Student · Universiti Teknologi Malaysia</div>
       <p class="hero-bio">
         Hi, I’m Esha. I am a final-year Software Engineering student at Universiti Teknologi Malaysia (UTM), originally from Bangladesh and currently based in Johor Bahru, Malaysia.
       </p>
       <p class="hero-bio">
-        🧪 I am conducting my Final Year Project on Explainable AI (XAI) and Machine Learning for Credit Assessment. My work aims to move beyond "black-box" models, ensuring AI-driven financial decisions are transparent, fair, and interpretable.
+        🧪 Currently, I am conducting my Final Year Project on Explainable AI (XAI) and Machine Learning for Credit Assessment. My work aims to move beyond "black-box" models, ensuring AI-driven financial decisions are transparent, fair, and interpretable.
       </p>
       <p class="hero-bio">
-        🎨 Beyond the Code, I love painting and reading. I draw inspiration from the fine arts to bring a unique, creative perspective to the tech space.
-      </p>
-      <p class="hero-bio">
-        To see my arts on Instagram: @eshaescape
+        🎨 Beyond the Code, I love painting and reading. I draw inspiration from the fine arts to bring a unique, creative perspective to the tech space.To see my arts on Instagram: @eshaescape
       </p>
       <div class="hero-pills">
         <span class="pill"><span class="pill-dot pd-sage"></span>CGPA 3.86 / 4.0</span>
@@ -519,9 +684,9 @@ footer{
         <span class="pill">Feb 2027 Graduation</span>
       </div>
       <div class="hero-btns">
-        <a class="btn-main" href="mailto:shubherthee@graduate.utm.my">Let's Talk →</a>
-        <a class="btn-outline" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a>
-        <a class="btn-outline" href="https://www.linkedin.com/in/shubherthee/" target="_blank">LinkedIn ↗</a>
+        <a class="btn-main" href="mailto:shubherthee@graduate.utm.my">Email</a>
+        <a class="btn-outline" href="https://github.com/shubherthee" target="_blank">GitHub</a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/shubherthee/" target="_blank">LinkedIn</a>
       </div>
     </div>
     <div class="hero-panel">
@@ -534,7 +699,8 @@ footer{
           <div class="ps"><div class="ps-num">Universiti Teknologi Malaysia</div><div class="ps-lbl">University</div></div>
           <div class="ps"><div class="ps-num">Bachelor of Computer Science (Software Engineering) with Honours</div><div class="ps-lbl">Course</div></div>
         </div>
-        <div class="panel-row"><span>Status</span><span>● Seeking internships Aug 2026</span></div>
+        <div class="panel-row"><span>Status</span><span>Seeking internships Aug 2026</span></div>
+        <div class="panel-row"><span>Graduation</span><span>February 2027</span></div>
         <div class="panel-row"><span>Location</span><span>Johor Bahru, MY</span></div>
       </div>
     </div>
@@ -545,7 +711,7 @@ footer{
 
 <!-- SKILLS -->
 <div class="wrap" id="skills">
-  <div class="sec-eyebrow">Technical Arsenal</div>
+  <div class="sec-eyebrow">Technical Skills</div>
   <h2 class="sec-h">What I build <em>with</em></h2>
   <div class="skills-grid">
     <div class="sk-block sk1">
