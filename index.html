@@ -1053,6 +1053,439 @@ html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb{
   }
 }
 
+
+
+/* ===================== FINAL HERO PROPORTION PATCH ===================== */
+/* Name: one-line, slightly smaller, and a more professional muted rose-gold accent for Esha. */
+@media (min-width:981px){
+  #hero .content.two-col{
+    grid-template-columns:minmax(0,1fr) minmax(455px,510px)!important;
+    gap:clamp(28px,3.8vw,54px)!important;
+  }
+  #hero .hero-name{
+    white-space:nowrap!important;
+    font-size:clamp(48px,6.75vw,99px)!important;
+    letter-spacing:clamp(-2px,-.32vw,-4.6px)!important;
+    line-height:.95!important;
+  }
+  #hero .hero-name .esha-pink{
+    color:#e7a7b5!important;
+    text-shadow:0 0 20px rgba(231,167,181,.22),0 0 42px rgba(246,252,185,.08)!important;
+  }
+
+  /* Hero card: image squeezed smaller so stat text has room to breathe. */
+  #hero .hero-panel{
+    max-width:510px!important;
+    padding:22px!important;
+  }
+  #hero .hero-panel-top{
+    grid-template-columns:255px minmax(160px,1fr)!important;
+    gap:18px!important;
+    align-items:stretch!important;
+  }
+  #hero .panel-avatar{
+    width:255px!important;
+    height:255px!important;
+    border-radius:22px!important;
+  }
+  #hero .panel-avatar img{
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+  #hero .panel-stats{
+    height:255px!important;
+    gap:8px!important;
+  }
+  #hero .ps{
+    padding:9px 11px!important;
+    border-radius:13px!important;
+  }
+  #hero .ps-num{
+    font-size:14.2px!important;
+    line-height:1.18!important;
+    letter-spacing:-.15px!important;
+  }
+  #hero .ps-lbl{
+    font-size:9.4px!important;
+    letter-spacing:.9px!important;
+    margin-top:5px!important;
+  }
+  #hero .hero-panel-bottom{
+    margin-top:15px!important;
+  }
+  #hero .panel-row{
+    font-size:12.5px!important;
+    padding:8px 11px!important;
+  }
+}
+
+@media (min-width:981px) and (max-width:1180px){
+  #hero .content.two-col{
+    grid-template-columns:1fr!important;
+  }
+  #hero .hero-name{
+    white-space:normal!important;
+    font-size:clamp(48px,8vw,82px)!important;
+  }
+  #hero .hero-panel{
+    max-width:510px!important;
+  }
+}
+
+@media (max-width:980px){
+  #hero .hero-name{
+    white-space:normal!important;
+  }
+  #hero .hero-name .esha-pink{
+    color:#e7a7b5!important;
+    text-shadow:0 0 18px rgba(231,167,181,.22)!important;
+  }
+  #hero .hero-panel{
+    max-width:410px!important;
+  }
+  #hero .panel-avatar{
+    width:270px!important;
+    height:270px!important;
+  }
+  #hero .ps-num{
+    font-size:14px!important;
+  }
+}
+
+@media (max-width:420px){
+  #hero .panel-avatar{
+    width:245px!important;
+    height:245px!important;
+  }
+}
+
+
+
+/* ===================== FINAL NON-OVERLAP RESPONSIVE PATCH ===================== */
+/* This last block intentionally overrides earlier hero rules so the desktop 100% view
+   and mobile view do not crop, overlap, or behave like oversized slides. */
+html{
+  scroll-padding-top:74px!important;
+}
+body{
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+.horizontal-wrap,
+.track{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  transform:none!important;
+}
+.track{
+  display:block!important;
+}
+.panel{
+  width:100%!important;
+  min-height:auto!important;
+  height:auto!important;
+  overflow:visible!important;
+  padding:72px clamp(18px,4vw,56px)!important;
+}
+#hero{
+  min-height:100svh!important;
+  padding-top:98px!important;
+  padding-bottom:66px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+#hero .content.two-col{
+  max-width:1180px!important;
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(390px,460px)!important;
+  gap:clamp(28px,3.6vw,48px)!important;
+  align-items:center!important;
+}
+#hero .content.two-col > .reveal:first-child{
+  min-width:0!important;
+  max-width:100%!important;
+}
+#hero .hero-name{
+  white-space:normal!important;
+  max-width:100%!important;
+  font-size:clamp(42px,5.35vw,78px)!important;
+  line-height:.98!important;
+  letter-spacing:clamp(-3.2px,-.24vw,-1.5px)!important;
+  margin:12px 0 10px!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  text-wrap:balance!important;
+}
+#hero .hero-name .esha-pink{
+  color:#e7a7b5!important;
+  font-style:italic!important;
+  text-shadow:0 0 18px rgba(231,167,181,.22),0 0 36px rgba(246,252,185,.08)!important;
+}
+#hero .hero-role{
+  margin:12px 0 12px!important;
+  line-height:1.55!important;
+}
+#hero .hero-eyebrow{
+  margin-bottom:22px!important;
+}
+#hero .hero-bio{
+  max-width:680px!important;
+  font-size:13px!important;
+  line-height:1.65!important;
+  margin-bottom:24px!important;
+  text-align:left!important;
+}
+#hero .hero-pills{
+  margin-bottom:24px!important;
+}
+#hero .hero-panel{
+  max-width:460px!important;
+  width:100%!important;
+  min-width:0!important;
+  margin-inline:auto!important;
+  padding:20px!important;
+  border-radius:24px!important;
+  transform-origin:center!important;
+}
+#hero .hero-panel-top{
+  display:grid!important;
+  grid-template-columns:220px minmax(0,1fr)!important;
+  gap:16px!important;
+  align-items:stretch!important;
+}
+#hero .panel-avatar{
+  width:220px!important;
+  height:220px!important;
+  min-height:0!important;
+  aspect-ratio:1/1!important;
+  border-radius:22px!important;
+  margin:0!important;
+}
+#hero .panel-avatar img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+}
+#hero .panel-stats{
+  height:220px!important;
+  min-width:0!important;
+  gap:8px!important;
+  justify-content:space-between!important;
+}
+#hero .ps{
+  min-width:0!important;
+  min-height:0!important;
+  padding:8px 10px!important;
+  border-radius:12px!important;
+}
+#hero .ps-num{
+  font-size:13.5px!important;
+  line-height:1.16!important;
+  letter-spacing:-.1px!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+#hero .ps-lbl{
+  font-size:9px!important;
+  letter-spacing:.8px!important;
+  margin-top:4px!important;
+}
+#hero .hero-panel-bottom{
+  margin-top:14px!important;
+}
+#hero .panel-row{
+  font-size:12px!important;
+  padding:8px 10px!important;
+  margin-bottom:6px!important;
+  gap:10px!important;
+}
+#hero .panel-row span:last-child{
+  overflow-wrap:anywhere!important;
+}
+
+@media (min-width:981px) and (max-height:780px){
+  #hero{
+    padding-top:86px!important;
+    padding-bottom:44px!important;
+    align-items:flex-start!important;
+  }
+  #hero .content.two-col{
+    grid-template-columns:minmax(0,1fr) minmax(370px,430px)!important;
+    gap:32px!important;
+  }
+  #hero .hero-name{
+    font-size:clamp(40px,4.9vw,68px)!important;
+    margin-top:6px!important;
+  }
+  #hero .hero-bio{
+    font-size:12.4px!important;
+    line-height:1.55!important;
+    margin-bottom:18px!important;
+  }
+  #hero .hero-pills{
+    margin-bottom:18px!important;
+  }
+  #hero .hero-panel{
+    max-width:430px!important;
+    padding:18px!important;
+  }
+  #hero .hero-panel-top{
+    grid-template-columns:200px minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+  #hero .panel-avatar,
+  #hero .panel-stats{
+    width:200px!important;
+    height:200px!important;
+  }
+  #hero .panel-stats{width:auto!important}
+  #hero .ps-num{font-size:12.8px!important}
+  #hero .panel-row{font-size:11.5px!important;padding:7px 9px!important}
+}
+
+@media (min-width:981px) and (max-width:1180px){
+  #hero{
+    min-height:auto!important;
+    align-items:flex-start!important;
+  }
+  #hero .content.two-col{
+    grid-template-columns:1fr!important;
+    max-width:760px!important;
+  }
+  #hero .hero-name{
+    font-size:clamp(44px,7vw,76px)!important;
+  }
+  #hero .hero-panel{
+    max-width:460px!important;
+    justify-self:center!important;
+  }
+}
+
+@media (max-width:980px){
+  nav{
+    padding:12px 16px!important;
+  }
+  .nav-logo{font-size:18px!important}
+  .nav-links{gap:10px!important}
+  .nav-cta{padding:7px 13px!important;font-size:12px!important}
+  .panel{
+    padding:58px 20px!important;
+    display:block!important;
+  }
+  #hero{
+    min-height:auto!important;
+    padding-top:88px!important;
+    padding-bottom:54px!important;
+    display:block!important;
+  }
+  #hero .content.two-col{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    max-width:640px!important;
+  }
+  #hero .hero-name{
+    font-size:clamp(40px,13.2vw,64px)!important;
+    line-height:1!important;
+    margin-top:4px!important;
+  }
+  #hero .hero-role{
+    font-size:9.5px!important;
+  }
+  #hero .hero-bio{
+    font-size:13px!important;
+    line-height:1.65!important;
+    margin-bottom:22px!important;
+  }
+  #hero .hero-panel{
+    max-width:390px!important;
+    width:100%!important;
+    padding:18px!important;
+    animation:none!important;
+  }
+  #hero .hero-panel:hover{
+    transform:none!important;
+  }
+  #hero .hero-panel-top{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  #hero .panel-avatar{
+    width:min(260px,100%)!important;
+    height:auto!important;
+    aspect-ratio:1/1!important;
+    margin:0 auto!important;
+  }
+  #hero .panel-stats{
+    height:auto!important;
+    width:100%!important;
+    gap:8px!important;
+  }
+  #hero .ps{
+    padding:11px 12px!important;
+  }
+  #hero .ps-num{
+    font-size:13.5px!important;
+    line-height:1.22!important;
+  }
+  #hero .panel-row{
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+    font-size:12px!important;
+  }
+  #hero .panel-row span:last-child{
+    text-align:center!important;
+  }
+  .skills-grid,
+  .edu-grid,
+  .campus-grid,
+  #projects .proj-grid.all-projects-grid,
+  #projects .proj-grid,
+  #project-extra .proj-grid{
+    grid-template-columns:1fr!important;
+  }
+  #projects .dhl-feature{
+    grid-column:auto!important;
+  }
+  #projects .proj-card,
+  #projects .proj-card.visible-card,
+  #project-extra .proj-card,
+  #project-extra .proj-card.visible-card{
+    transform:none!important;
+    min-height:auto!important;
+  }
+}
+
+@media (max-width:430px){
+  .panel{padding-inline:15px!important}
+  #hero .hero-name{
+    font-size:clamp(36px,12.5vw,52px)!important;
+    letter-spacing:-1.6px!important;
+  }
+  #hero .hero-eyebrow{
+    width:100%!important;
+    justify-content:center!important;
+    text-align:center!important;
+    letter-spacing:1.6px!important;
+    padding-inline:12px!important;
+  }
+  #hero .hero-btns .btn-main,
+  #hero .hero-btns .btn-outline{
+    width:100%!important;
+  }
+  #hero .hero-panel{
+    max-width:100%!important;
+    padding:16px!important;
+  }
+  #hero .panel-avatar{
+    width:min(230px,100%)!important;
+  }
+}
+
 </style>
 </head>
 <body class="no-js">
