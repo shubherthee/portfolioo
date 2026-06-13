@@ -308,37 +308,79 @@ nav{
 .exp-period{background:rgba(232,180,200,.1);border:1px solid rgba(232,180,200,.22);color:var(--petal);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:5px 12px;border-radius:100px;white-space:nowrap;height:fit-content;letter-spacing:.5px}
 
 /* Projects */
-.proj-grid.all-projects-grid{
+.proj-row-feature{
   display:grid;
-  grid-template-columns:repeat(4,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:22px;
-  align-items:stretch;
+  align-items:start;
+  margin-bottom:22px;
+}
+.proj-grid.all-projects-grid{
+  column-count:2;
+  column-gap:22px;
+  display:block;
   perspective:1200px;
 }
+.proj-masonry-split{
+  display:grid;
+  grid-template-columns: 28% 72%;
+  gap:22px;
+  align-items:start;
+}
+.proj-masonry-split > .feature-wide{
+  justify-self:start;
+  width:fit-content;
+  max-width:100%;
+  padding:18px;
+}
+.mobile-project-image{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:180px;
+  margin:10px auto 20px;
+}
+.proj-masonry-stack{
+  column-count:2;
+  column-gap:22px;
+  display:block;
+}
+.proj-masonry-stack .proj-card{
+  width:100%;
+}
+.fallen-card{
+  width:100%;
+}
 .proj-card{
-  min-height:330px;
-  padding:24px;display:flex;flex-direction:column;
+  min-height:0;
+  padding:24px;display:flex;flex-direction:column;gap:14px;
   background:linear-gradient(160deg,rgba(31,31,58,.92),rgba(15,28,54,.72));
   border:1px solid rgba(245,240,232,.14);
   box-shadow:0 20px 70px rgba(0,0,0,.22);
   transform-style:preserve-3d;
   will-change:transform;
+  width:100%;
+  display:inline-flex;
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  margin:0 0 22px;
 }
 .dhl-feature{
-  grid-column:span 2;
   background:linear-gradient(155deg,rgba(60,22,39,.75),rgba(15,28,54,.82))!important;
   border-color:rgba(255,143,200,.26)!important;
 }
+.xai-feature{background:linear-gradient(155deg,rgba(31,31,58,.92),rgba(15,28,54,.82))!important;border-color:rgba(126,184,122,.2)!important}
 .proj-card:hover{
   transform:translateY(-12px)!important;
   border-color:rgba(246,252,185,.3);
   box-shadow:0 32px 90px rgba(0,0,0,.3),0 0 28px rgba(126,184,122,.09);
 }
-.proj-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.proj-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--cream);margin-bottom:10px;line-height:1.25}
-.proj-desc{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:18px;flex:1}
+.proj-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0}
+.proj-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--cream);margin-bottom:0;line-height:1.25}
+.proj-desc{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:0;flex:none}
 .chip{background:rgba(74,124,89,.12);border:1px solid rgba(74,124,89,.22);color:var(--sage);font-family:'Space Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase}
-.proj-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.proj-foot{display:flex;justify-content:space-between;align-items:center;margin-top:0}
 .award-badge{font-size:10px;font-weight:500;padding:4px 10px;border-radius:100px;background:rgba(232,201,110,.1);border:1px solid rgba(232,201,110,.22);color:var(--gold)}
 .proj-a{font-size:11px;color:var(--text3);text-decoration:none;display:flex;align-items:center;gap:3px;padding:5px 10px;border:1px solid var(--border);border-radius:7px;transition:all .2s}
 .proj-a:hover{color:var(--cream);border-color:rgba(255,255,255,.2)}
@@ -416,9 +458,11 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   .panel-row{font-size:11.5px!important}
   .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   .campus-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .proj-grid.all-projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .dhl-feature{grid-column:span 2!important}
+  .proj-row-feature{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .proj-masonry-split{grid-template-columns:30% 70%;}
+  .proj-masonry-stack{column-count:2!important;column-gap:22px!important}
   .proj-card{min-width:0!important}
+  .mobile-project-image{ max-width:180px;margin:10px auto 20px;}
   .proj-name,.campus-title,.edu-deg,.exp-role{overflow-wrap:anywhere!important;hyphens:auto!important}
 }
 
@@ -441,8 +485,11 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   .panel-row{flex-direction:column!important;align-items:center!important;text-align:center!important;font-size:12px!important;gap:2px!important}
   .panel-row span{min-width:0!important;overflow-wrap:anywhere!important}
   .panel-row span:last-child{text-align:center!important}
-  .skills-grid,.campus-grid,.proj-grid.all-projects-grid{grid-template-columns:1fr!important}
-  .dhl-feature{grid-column:auto!important}
+  .skills-grid,.campus-grid{grid-template-columns:1fr!important}
+  .proj-row-feature{grid-template-columns:1fr!important}
+  .proj-masonry-split{grid-template-columns:30% 70%;}
+  .proj-masonry-stack{column-count:1!important;column-gap:22px!important}
+  .mobile-project-image{ max-width:180px;margin:10px auto 20px;}
   .proj-card,.proj-card.visible-card{transform:none!important;min-height:auto!important;min-width:0!important}
   .exp-card{grid-template-columns:1fr;gap:12px;min-width:0!important}
   .exp-period{width:fit-content}
@@ -680,8 +727,9 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
       <div class="content reveal">
         <div class="scene-eyebrow">Selected Work</div>
         <h2 class="sec-h">Projects</h2>
-        <div class="proj-grid all-projects-grid">
-          <div class="proj-card">
+        <div class="proj-row-feature">
+          <div class="proj-card xai-feature">
+            <img src="credxai.png" alt="CredXAI project image" style="width:100%;height:auto;display:block;border-radius:14px;">
             <div class="proj-tag">01 · FYP Research</div>
             <div class="proj-name">Explainable AI for Credit Assessment</div>
             <div class="proj-desc">Trained 6 ML models on imbalanced real-world datasets. Applied SHAP & LIME to make black-box decisions transparent and regulatory-compliant.</div>
@@ -689,53 +737,54 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
             <div class="proj-foot"><span class="award-badge">Final Year Project</span></div>
           </div>
           <div class="proj-card dhl-feature">
+            <img src="dhl.png" alt="DHL project image" style="width:100%;height:auto;display:block;border-radius:14px;">
             <div class="proj-tag">02 · AI + RPA + Logistics</div>
             <div class="proj-name">DHL AI Incident Management System</div>
             <div class="proj-desc">AI-powered logistics incident platform with FastAPI, Next.js, PostgreSQL, OCR, OpenRouter LLM analysis, duplicate detection, workflow history, and UiPath RPA automation for Google Drive ingestion, status updates, screenshots, logs, and summary emails.</div>
             <div class="chips"><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">PostgreSQL</span><span class="chip">OCR</span><span class="chip">OpenRouter</span><span class="chip">UiPath</span></div>
             <div class="proj-foot"><span class="award-badge">Full-stack AI Automation</span><a class="proj-a" href="https://github.com/shubherthee/DHL-AI-RPA-Incident-Management-System.git" target="_blank">GitHub ↗</a></div>
           </div>
-          <div class="proj-card">
-            <div class="proj-tag">03 · Mobile</div>
-            <div class="proj-name">SkillSwap — P2P Learning Marketplace</div>
-            <div class="proj-desc">Dual-user mobile marketplace where students book peer tutoring sessions. Integrated Stripe for payments and Firebase for real-time sync.</div>
-            <div class="chips"><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Stripe API</span></div>
-            <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-tag">04 · Web App</div>
-            <div class="proj-name">Faculty Timetable Management System</div>
-            <div class="proj-desc">Modernized a legacy desktop system into a mobile-first SPA for UTM's Faculty of Computing with RESTful backend APIs.</div>
-            <div class="chips"><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">Tailwind</span></div>
-            <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-tag">05 · Hackathon</div>
-            <div class="proj-name">FALLEN — Adventure Game</div>
-            <div class="proj-desc">Narrative-driven adventure game built in 48 hours at UTM Game Jam. Engineered gameplay loops, puzzles, and state management.</div>
-            <div class="chips"><span class="chip">Godot</span><span class="chip">GDScript</span><span class="chip">Game Design</span></div>
-            <div class="proj-foot"><span class="award-badge">🏆 3rd Place</span><a class="proj-a" href="https://itch.io" target="_blank">itch.io ↗</a></div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-tag">06 · UI/UX</div>
+        </div>
+        <div class="proj-masonry-split">
+          <div class="proj-card feature-wide">
+            <div class="proj-tag">03 · UI/UX</div>
+            <img src="digitalease.png" alt="DigitalEase project image" class="mobile-project-image" style="border-radius:14px;">
             <div class="proj-name">DigitalEase — Productivity App</div>
             <div class="proj-desc">High-fidelity Figma prototype with task lists, app blocking, Pomodoro timers. Validated with iterative usability testing and HCI principles.</div>
             <div class="chips"><span class="chip">Figma</span><span class="chip">UI/UX</span><span class="chip">HCI</span></div>
             <div class="proj-foot"><span></span><a class="proj-a" href="#" target="_blank">Figma ↗</a></div>
           </div>
-          <div class="proj-card">
-            <div class="proj-tag">07 · Enterprise</div>
-            <div class="proj-name">JPNJ Johor TVPSS — School Media Platform</div>
-            <div class="proj-desc">Secure full-stack educational media platform for JPNJ Johor. Built with Java Spring MVC + Hibernate, working directly with government stakeholders.</div>
-            <div class="chips"><span class="chip">Java</span><span class="chip">Spring MVC</span><span class="chip">Hibernate</span></div>
-            <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-tag">08 · AI Systems</div>
-            <div class="proj-name">AI-Powered Agricultural Assistant</div>
-            <div class="proj-desc">PEAS-modeled AI agent transforming sensor data into crop diagnoses using state-space search and First-Order Logic — sub-second response times.</div>
-            <div class="chips"><span class="chip">State-Space Search</span><span class="chip">FOL</span><span class="chip">PEAS</span></div>
-            <div class="proj-foot"><span></span></div>
+          <div class="proj-masonry-stack">
+            <div class="proj-card">
+              <div class="proj-tag">04 · Mobile</div>
+              <div class="proj-name">SkillSwap — P2P Learning Marketplace</div>
+              <div class="proj-desc">Dual-user mobile marketplace where students book peer tutoring sessions. Integrated Stripe for payments and Firebase for real-time sync.</div>
+              <div class="chips"><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Stripe API</span></div>
+              <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
+            </div>
+            <div class="proj-card">
+              <div class="proj-tag">05 · Web App</div>
+              <div class="proj-name">Faculty Timetable Management System</div>
+              <div class="proj-desc">Modernized a legacy desktop system into a mobile-first SPA for UTM's Faculty of Computing with RESTful backend APIs.</div>
+              <div class="chips"><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">Tailwind</span></div>
+              <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
+            </div>
+            <div class="proj-card fallen-card">
+              <div class="proj-tag">06 · Enterprise</div>
+              <img src="tvpss.png" alt="TVPSS project image" style="width:100%;height:auto;display:block;border-radius:14px;">
+              <div class="proj-name">JPNJ Johor TVPSS — School Media Platform</div>
+              <div class="proj-desc">Secure full-stack educational media platform for JPNJ Johor. Built with Java Spring MVC + Hibernate, working directly with government stakeholders.</div>
+              <div class="chips"><span class="chip">Java</span><span class="chip">Spring MVC</span><span class="chip">Hibernate</span></div>
+              <div class="proj-foot"><span></span><a class="proj-a" href="https://github.com/shubherthee" target="_blank">GitHub ↗</a></div>
+            </div>
+            <div class="proj-card">
+              <div class="proj-tag">07 · Hackathon</div>
+              <img src="fallen.png" alt="FALLEN game project image" style="width:100%;height:auto;display:block;border-radius:14px;">
+              <div class="proj-name">FALLEN — Adventure Game</div>
+              <div class="proj-desc">Narrative-driven adventure game built in 48 hours at UTM Game Jam. Engineered gameplay loops, puzzles, and state management.</div>
+              <div class="chips"><span class="chip">Godot</span><span class="chip">GDScript</span><span class="chip">Game Design</span></div>
+              <div class="proj-foot"><span class="award-badge">🏆 3rd Place</span><a class="proj-a" href="https://itch.io" target="_blank">itch.io ↗</a></div>
+            </div>
           </div>
         </div>
       </div>
