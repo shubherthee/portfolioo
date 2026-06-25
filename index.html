@@ -215,6 +215,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 }
 .proj-card:hover .proj-img img { transform: scale(1.04); }
 
+/* Contain variant for images that should be fully visible */
+.proj-img.proj-img--contain {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.12));
+}
+.proj-img.proj-img--contain img {
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+  padding: 12px;
+}
+.proj-card:hover .proj-img.proj-img--contain img { transform: none; }
+
 /* Taller image for feature cards */
 .proj-img.proj-img--tall { aspect-ratio: 4/3; }
 
@@ -676,7 +688,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
         <div class="proj-row-1">
 
           <div class="proj-card xai-feature">
-            <div class="proj-img">
+            <div class="proj-img proj-img--contain">
               <img src="credxai.png" alt="CredXAI — Explainable AI for Credit Assessment">
             </div>
             <div class="proj-body">
@@ -691,7 +703,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
           </div>
 
           <div class="proj-card dhl-feature">
-            <div class="proj-img">
+            <div class="proj-img proj-img--contain">
               <img src="dhl.png" alt="DHL AI Incident Management System">
             </div>
             <div class="proj-body">
@@ -958,5 +970,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 </script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
