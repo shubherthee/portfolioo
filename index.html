@@ -102,21 +102,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2);font-weight:400;padding:13px 24px}
 .btn-outline:hover{border-color:rgba(245,240,232,.25);color:var(--cream);transform:translateY(-2px)}
 
-.hero-panel{background:linear-gradient(160deg,rgba(74,124,89,.12),rgba(26,39,68,.6));border:1px solid var(--border2);border-radius:24px;padding:20px;position:relative;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.22);transform-style:preserve-3d;will-change:transform;animation:profileDrift 10s ease-in-out infinite;width:100%;max-width:460px;margin-inline:auto;justify-self:end}
-@keyframes profileDrift{0%,100%{transform:perspective(1050px) rotateY(-5deg) rotateX(1.5deg) rotateZ(.7deg) translateY(0)}50%{transform:perspective(1050px) rotateY(4deg) rotateX(-1deg) rotateZ(-.6deg) translateY(-9px)}}
-.hero-panel:hover{animation-play-state:paused;transform:perspective(1050px) rotateY(0) rotateX(0) translateY(-6px) scale(1.015)!important}
-.hero-panel::before{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,var(--sage),transparent)}
-.hero-panel-top{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;align-items:stretch}
-.panel-avatar{width:220px;height:220px;min-height:0;aspect-ratio:1/1;border-radius:22px;overflow:hidden;border:2px solid rgba(255,182,219,.3);box-shadow:0 18px 50px rgba(0,0,0,.26),0 0 30px rgba(255,143,200,.12)}
+.hero-panel{background:transparent;border:none;padding:45px 30px 25px;position:relative;transform-style:preserve-3d;will-change:transform;animation:profileDrift 10s ease-in-out infinite;width:100%;max-width:460px;margin-inline:auto;justify-self:end;z-index:10}
+.hero-panel::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:#f7f3e8;background-image:linear-gradient(45deg,transparent 48%,rgba(0,0,0,.02) 50%,transparent 52%),linear-gradient(-45deg,transparent 30%,rgba(255,255,255,.4) 32%,transparent 35%),linear-gradient(15deg,transparent 60%,rgba(0,0,0,.03) 62%,transparent 65%),radial-gradient(circle at 20% 30%,rgba(0,0,0,.03) 0,transparent 30%),radial-gradient(circle at 80% 70%,rgba(255,255,255,.4) 0,transparent 40%),repeating-linear-gradient(transparent,transparent 27px,#e2dac3 28px);background-position:0 10px;border-radius:2px;box-shadow:4px 8px 20px rgba(0,0,0,.12);z-index:-1}
+@keyframes profileDrift{0%,100%{transform:perspective(1050px) rotateY(-3deg) rotateX(1deg) rotateZ(.5deg) translateY(0)}50%{transform:perspective(1050px) rotateY(2deg) rotateX(-1deg) rotateZ(-.5deg) translateY(-6px)}}
+.hero-panel:hover{animation-play-state:paused;transform:perspective(1050px) rotateY(0) rotateX(0) translateY(-4px) scale(1.015)!important}
+.hero-panel::before{content:'';position:absolute;top:-15px;left:-20px;width:calc(100% + 20px);height:calc(100% + 25px);background-color:#faf8f2;background-image:linear-gradient(45deg,#7da169 25%,transparent 25%,transparent 75%,#7da169 75%,#7da169),linear-gradient(45deg,#7da169 25%,transparent 25%,transparent 75%,#7da169 75%,#7da169);background-position:0 0,15px 15px;background-size:30px 30px;z-index:-2;transform:rotate(-4deg);border-radius:2px;box-shadow:2px 6px 15px rgba(0,0,0,.15)}
+.scrapbook-clip{position:absolute;top:-105px;left:50%;transform:translateX(-50%);width:336px;height:200px;background-image:url('paperclip.png');background-size:contain;background-position:bottom center;background-repeat:no-repeat;z-index:15;filter:drop-shadow(0 6px 8px rgba(0,0,0,.2))}
+.scrapbook-leaf{position:absolute;top:10%;left:-40px;width:90px;height:90px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-10 50 50)'%3E%3Cpath d='M50,90 C50,90 40,70 20,50 C0,30 20,10 35,20 C50,30 50,50 50,50 C50,50 50,30 65,20 C80,10 100,30 80,50 C60,70 50,90 50,90 Z' fill='%2374a362'/%3E%3Cpath d='M50,90 C50,90 45,65 30,45 M50,90 C50,90 55,65 70,45' stroke='%23487038' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M50,90 L50,100' stroke='%2374a362' stroke-width='6' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;z-index:4;filter:drop-shadow(2px 3px 4px rgba(0,0,0,.25))}
+.scrapbook-tape{position:absolute;bottom:25px;right:-35px;width:130px;height:40px;background:rgba(148,184,126,.85);transform:rotate(-35deg);box-shadow:1px 2px 4px rgba(0,0,0,.15);z-index:12;clip-path:polygon(4% 0,96% 0,100% 12%,97% 28%,100% 50%,96% 75%,100% 90%,95% 100%,5% 100%,0 88%,3% 72%,0 50%,4% 25%,0 10%)}
+.scrapbook-book{position:absolute;top:45%;right:-30px;width:110px;height:110px;background-image:url('book.png');background-size:contain;background-position:center;background-repeat:no-repeat;z-index:3;filter:drop-shadow(2px 4px 6px rgba(0,0,0,.2));transform:rotate(12deg)}
+.scrapbook-coding{position:absolute;bottom:-35px;left:-20px;width:80px;height:80px;background-image:url('coding.png');background-size:contain;background-position:center;background-repeat:no-repeat;z-index:3;filter:drop-shadow(-2px 4px 6px rgba(0,0,0,.2));transform:rotate(-10deg)}
+.hero-panel-top{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;align-items:stretch;position:relative;z-index:5}
+.panel-avatar{width:220px;height:220px;min-height:0;aspect-ratio:1/1;border-radius:4px;overflow:hidden;border:8px solid #fff;box-shadow:2px 4px 15px rgba(0,0,0,.15);transform:rotate(-3deg);background:#fff}
 .panel-avatar img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
 .panel-stats{height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
-.ps{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:8px 10px;text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden}
-.ps-num{font-family:'Playfair Display',serif;font-weight:700;font-size:13.5px;line-height:1.16;color:var(--gold);overflow-wrap:break-word}
-.ps-lbl{font-size:9px;color:var(--text3);font-weight:600;letter-spacing:.8px;text-transform:uppercase;margin-top:4px}
-.hero-panel-bottom{display:flex;flex-direction:column;width:100%;margin-top:14px}
-.panel-row{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:6px}
-.panel-row span:first-child{color:var(--text3)}
-.panel-row span:last-child{color:var(--sage);font-weight:500;text-align:right;overflow-wrap:anywhere;min-width:0}
+.ps{background:rgba(0,0,0,.02);border:1px dashed rgba(0,0,0,.15);border-radius:6px;padding:8px 10px;text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden;box-shadow:1px 1px 3px rgba(0,0,0,0.02)}
+.ps-num{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;line-height:1.16;color:#1e3625;overflow-wrap:break-word}
+.ps-lbl{font-size:9px;color:#666;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-top:4px}
+.hero-panel-bottom{display:flex;flex-direction:column;width:100%;margin-top:14px;position:relative;z-index:5}
+.panel-row{background:transparent;border-bottom:1px solid rgba(0,0,0,.1);padding:8px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:2px}
+.panel-row span:first-child{color:#555;font-family:'Space Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:1px}
+.panel-row span:last-child{color:#1e3625;font-weight:700;text-align:right;overflow-wrap:anywhere;min-width:0}
 
 .sec-h{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(34px,4.2vw,62px);letter-spacing:-2.8px;line-height:.95;color:var(--cream);margin-bottom:36px}
 .sec-h em{font-style:italic;color:var(--gold)}
@@ -401,7 +407,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   #hero .two-col{grid-template-columns:minmax(0,1fr) minmax(370px,420px)!important;gap:28px!important}
   .hero-name{font-size:clamp(40px,4.9vw,68px)!important;margin-top:6px!important}
   .hero-bio{font-size:12.4px!important;line-height:1.55!important;margin-bottom:18px!important}
-  #hero .hero-panel{max-width:420px!important;padding:17px!important}
+  #hero .hero-panel{max-width:420px!important;padding:40px 20px 20px!important}
   #hero .hero-panel-top{grid-template-columns:195px minmax(0,1fr)!important;gap:13px!important}
   #hero .panel-avatar{width:195px!important;height:195px!important}
   #hero .panel-stats{height:195px!important}
@@ -412,7 +418,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   #hero .two-col{width:min(720px,100%)!important;gap:24px!important;align-items:center!important;transform:none!important;min-width:0!important}
   .hero-name{font-size:clamp(44px,7vw,68px)!important;line-height:.95!important}
   .hero-bio{font-size:14px!important;line-height:1.66!important}
-  .hero-panel{width:min(440px,100%)!important;max-width:440px!important;padding:18px!important;margin-inline:auto!important}
+  .hero-panel{width:min(440px,100%)!important;max-width:440px!important;padding:45px 25px 25px!important;margin-inline:auto!important}
   .hero-panel-top{grid-template-columns:minmax(190px,210px) minmax(0,1fr)!important;gap:14px!important;align-items:stretch!important}
   .panel-avatar{width:100%!important;height:100%!important;aspect-ratio:1/1!important}
   .panel-stats{height:auto!important;min-width:0!important}
@@ -432,7 +438,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   .two-col{grid-template-columns:1fr!important;gap:26px!important;max-width:620px!important;margin-inline:auto!important;min-width:0!important;transform:none!important}
   .hero-name{font-size:clamp(40px,10vw,62px)!important;letter-spacing:-1.8px!important;line-height:.96!important;text-wrap:balance!important}
   .hero-bio{font-size:13.5px!important;line-height:1.68!important}
-  .hero-panel{animation:none!important;max-width:100%!important;width:min(460px,100%)!important;padding:18px!important;min-width:0!important}
+  .hero-panel{animation:none!important;max-width:100%!important;width:min(460px,100%)!important;padding:45px 25px 25px!important;min-width:0!important}
   .hero-panel:hover{transform:none!important}
   .hero-panel-top{grid-template-columns:1fr!important;gap:16px!important}
   .panel-avatar{width:min(260px,100%)!important;height:auto!important;aspect-ratio:1/1!important;margin-inline:auto!important}
@@ -465,7 +471,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
   .hero-btns{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
   .hero-btns .btn-main{grid-column:1 / -1!important;width:100%!important}
   .hero-btns .btn-outline{width:100%!important;min-width:0!important}
-  .hero-panel{max-width:100%!important;padding:14px!important;min-width:0!important}
+  .hero-panel{max-width:100%!important;padding:45px 20px 25px!important;min-width:0!important}
   .hero-panel-top{grid-template-columns:1fr!important;gap:12px!important}
   .panel-avatar{width:min(220px,100%)!important}
   .panel-stats{gap:7px!important}
@@ -502,6 +508,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#campus">Awards</a>
     <a class="nav-cta" href="mailto:shubherthee@graduate.utm.my">Hire Me</a>
   </div>
 </nav>
@@ -536,6 +543,11 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
           </div>
         </div>
         <div class="hero-panel reveal">
+          <div class="scrapbook-clip"></div>
+          <div class="scrapbook-leaf"></div>
+          <div class="scrapbook-tape"></div>
+          <div class="scrapbook-book"></div>
+          <div class="scrapbook-coding"></div>
           <div class="hero-panel-top">
             <div class="panel-avatar"><img src="image.png" alt="Photo of Shubherthee Esha"></div>
             <div class="panel-stats">
@@ -547,7 +559,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
           <div class="hero-panel-bottom">
             <div class="panel-row"><span>Status</span><span>Seeking internships Aug 2026</span></div>
             <div class="panel-row"><span>Graduation</span><span>February 2027</span></div>
-            <div class="panel-row"><span>Location</span><span>Johor Bahru, MY</span></div>
+            <div class="panel-row"><span>Current location</span><span>Johor Bahru (Willing to relocate)</span></div>
           </div>
         </div>
       </div>
@@ -807,53 +819,50 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
     <section class="panel" id="campus">
       <div class="ghibli-glow g3"></div>
       <div class="content reveal">
-        <div class="scene-eyebrow">Beyond Code</div>
-        <h2 class="sec-h">Campus & <em>Achievements</em></h2>
-        <div class="campus-grid">
+        <div class="scene-eyebrow">Milestones</div>
+        <h2 class="sec-h"><em>Achievements</em></h2>
+        <div class="campus-grid" style="margin-bottom: 50px;">
           <div class="campus-card">
-            <div class="campus-icon ci-gold">🏆</div>
             <div class="campus-title">Best Presenter Award</div>
             <div class="campus-org">Intl. Undergraduate Research Conference 2026</div>
             <div class="campus-desc">Awarded for the project "Explainable AI for Transparency in Credit Assessment".</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-gold">🥈</div>
             <div class="campus-title">Silver Medalist</div>
             <div class="campus-org">DIGITEX 2026</div>
             <div class="campus-desc">Awarded for the project "Explainable AI for Transparency in Credit Assessment".</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-gold">🏆</div>
             <div class="campus-title">3rd Place — UTM Game Jam</div>
             <div class="campus-org">UTM · Hackathon</div>
             <div class="campus-desc">Built FALLEN in 48 hours through creative design, audio-visual polish, and technical execution.</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-gold">☁️</div>
             <div class="campus-title">AWS Cloud Essential for Learning</div>
             <div class="campus-org">AWS & UTM Faculty of Computing</div>
             <div class="campus-desc">Completed foundational training on AWS Cloud infrastructure, security, and core services (EC2, S3, RDS).</div>
           </div>
+        </div>
+        
+        <div class="scene-eyebrow">Beyond Code</div>
+        <h2 class="sec-h">Campus <em>Involvements</em></h2>
+        <div class="campus-grid">
           <div class="campus-card">
-            <div class="campus-icon ci-dusk">👨‍🏫</div>
             <div class="campus-title">Programming Facilitator</div>
             <div class="campus-org">PERSAKA Campus Outreach Program</div>
             <div class="campus-desc">Conducted hands-on workshops teaching basic programming to school students and teachers.</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-petal">🎤</div>
             <div class="campus-title">Graphics Design Team</div>
             <div class="campus-org">TEDxUTM</div>
             <div class="campus-desc">Produced branded marketing collateral and edited high-impact videos for the event.</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-dusk">🎨</div>
             <div class="campus-title">Multimedia & Graphics</div>
             <div class="campus-org">ComputingFair'24</div>
             <div class="campus-desc">Created posters, promotional materials, and edited event highlight videos with strict design consistency.</div>
           </div>
           <div class="campus-card">
-            <div class="campus-icon ci-sage">🤝</div>
             <div class="campus-title">External Affairs</div>
             <div class="campus-org">Computing Gala'24</div>
             <div class="campus-desc">Managed sponsorship acquisition and strategic outreach, securing external partnerships.</div>
