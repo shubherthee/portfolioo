@@ -160,9 +160,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .edu-level{display:inline-flex;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);background:rgba(246,252,185,.08);border:1px solid rgba(246,252,185,.18);border-radius:999px;padding:5px 12px;margin-bottom:14px}
 
 .exp-list{display:flex;flex-direction:column;gap:16px;max-width:980px;margin-inline:auto}
-.exp-card{padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;transition:border-color .25s,transform .25s}
+.exp-card{padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;transition:border-color .25s,transform .25s,box-shadow .25s,background .25s}
 .exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2.5px;background:linear-gradient(180deg,var(--sage),var(--dusk))}
 .exp-card:hover{border-color:rgba(126,184,122,.3);transform:translateX(4px)!important}
+.exp-card.highlighted{border-color:rgba(231,167,181,.4);background:rgba(231,167,181,.04);box-shadow:0 4px 24px rgba(231,167,181,.08)}
+.exp-card.highlighted::before{background:linear-gradient(180deg,#e7a7b5,var(--dusk))}
+.exp-card.highlighted:hover{border-color:rgba(231,167,181,.7);box-shadow:0 8px 30px rgba(231,167,181,.12)}
 .exp-role{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--cream);margin-bottom:3px}
 .exp-co{font-size:13px;color:var(--sage);font-weight:400;margin-bottom:18px}
 .exp-ul{list-style:none;display:flex;flex-direction:column;gap:7px}
@@ -527,13 +530,13 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
             Open to Full-Time / Contract Roles · March 2027
           </div>
           <p class="hero-bio">
-            Hi, I'm Esha — a final-year Software Engineering student at UTM, originally from Bangladesh and now based in Johor Bahru, Malaysia. I'm currently working on my Final Year Project in Explainable AI for credit assessment, where I explore how machine learning models behave on imbalanced data and use SHAP and LIME to make their decisions more transparent and fair. Outside of tech you'll usually find me painting or reading.
+            Hi, I'm Esha — a final-year Software Engineering student at UTM, originally from Bangladesh and now based in Kuala Lumpur, Malaysia. I'm currently a Software Engineer Intern (iOS) at Grab, while also working on my Final Year Project in Explainable AI for credit assessment, where I explore how machine learning models behave on imbalanced data and use SHAP and LIME to make their decisions more transparent and fair. Outside of tech you'll usually find me painting or reading.
           </p>
           <div class="hero-pills">
             <span class="pill"><span class="pill-dot pd-sage"></span>CGPA 3.86 / 4.0</span>
             <span class="pill"><span class="pill-dot pd-gold"></span>Dean's List</span>
             <span class="pill"><span class="pill-dot pd-dusk"></span>IELTS Band 8</span>
-            <span class="pill"><span class="pill-dot pd-petal"></span>Johor Bahru, MY</span>
+            <span class="pill"><span class="pill-dot pd-petal"></span>Kuala Lumpur, MY</span>
             <span class="pill">Feb 2027 Graduation</span>
           </div>
           <div class="hero-btns">
@@ -557,9 +560,10 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
             </div>
           </div>
           <div class="hero-panel-bottom">
+            <div class="panel-row"><span>Current Role</span><span>Software Engineer Intern (iOS) @ Grab</span></div>
             <div class="panel-row"><span>Status</span><span>Seeking full-time/contract roles Mar 2027</span></div>
             <div class="panel-row"><span>Graduation</span><span>February 2027</span></div>
-            <div class="panel-row"><span>Current location</span><span>Johor Bahru (Willing to relocate)</span></div>
+            <div class="panel-row"><span>Current location</span><span>Kuala Lumpur (Willing to relocate)</span></div>
           </div>
         </div>
       </div>
@@ -574,6 +578,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
           <div class="sk-block">
             <div class="sk-title c-sage">Languages</div>
             <div class="logo-grid">
+              <span class="logo-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="">Swift (iOS)</span>
               <span class="logo-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">Python</span>
               <span class="logo-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">Java</span>
               <span class="logo-tile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
@@ -672,7 +677,7 @@ html::-webkit-scrollbar-thumb{background:rgba(126,184,122,.4);border-radius:999p
         <div class="scene-eyebrow">Work Experience</div>
         <h2 class="sec-h">Where I've <em>worked</em></h2>
         <div class="exp-list">
-          <div class="exp-card">
+          <div class="exp-card highlighted">
             <div>
               <div class="exp-role">Software Engineer Intern - Mobile (iOS)</div>
               <div class="exp-co">Grab · Malaysia</div>
